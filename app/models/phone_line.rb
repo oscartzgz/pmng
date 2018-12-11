@@ -1,0 +1,2 @@
+class PhoneLine < ApplicationRecord
+end

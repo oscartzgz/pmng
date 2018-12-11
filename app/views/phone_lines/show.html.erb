@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @phone_line.number %>
+</p>
+
+<p>
+  <strong>Sim key:</strong>
+  <%= @phone_line.SIM_key %>
+</p>
+
+<%= link_to 'Edit', edit_phone_line_path(@phone_line) %> |
+<%= link_to 'Back', phone_lines_path %>
