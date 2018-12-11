@@ -12,56 +12,57 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand %>
+    <%= form.label :brand, 'Marca' %>
+    <%= form.text_field :brand, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model %>
+    <%= form.label :model, 'Modelo' %>
+    <%= form.text_field :model, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :sku %>
-    <%= form.text_field :sku %>
+    <%= form.label :sku, 'SKU' %>
+    <%= form.text_field :sku, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :value %>
-    <%= form.text_field :value %>
+    <%= form.label :value, 'Valor' %>
+    <%= form.text_field :value, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
+    <%= form.label :status, 'Estado' %>
+    <%= form.text_field :status, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :observations %>
-    <%= form.text_field :observations %>
+    <%= form.label :observations, 'Observaciones' %>
+    <%= form.text_field :observations, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :assignment %>
-    <%= form.text_field :assignment %>
+    <%= form.label :assignment, 'Asignación' %>
+    <%= form.text_field :assignment, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :quantity %>
-    <%= form.text_field :quantity %>
+    <%= form.label :quantity, 'Cantidad' %>
+    <%= form.text_field :quantity, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :IMEI %>
-    <%= form.text_field :IMEI %>
+    <%= form.label :IMEI, 'IMEI' %>
+    <%= form.text_field :IMEI, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :phone_line_id %>
-    <%= form.text_field :phone_line_id %>
+    <%= form.label :phone_line_id, 'Linea Telefónica(solo se muestran disponibles)' %>
+    <%#= form.text_field :phone_line_id %>
+    <%= form.select :phone_line_id, @available_phone_lines.map { |line| [line.number, line.id]}, {},class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

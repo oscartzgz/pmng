@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Lineas telefonicas</h1>
+    </div>
+    <div class="col-lg-6 text-right">
+      <%= link_to '+ Nueva linea telefonica', new_phone_line_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
 
-<h1>Phone Lines</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Sim key</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @phone_lines.each do |phone_line| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= phone_line.number %></td>
-        <td><%= phone_line.SIM_key %></td>
-        <td><%= link_to 'Show', phone_line %></td>
-        <td><%= link_to 'Edit', edit_phone_line_path(phone_line) %></td>
-        <td><%= link_to 'Destroy', phone_line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Numero</th>
+        <th>Clave KEY</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @phone_lines.each do |phone_line| %>
+        <tr>
+          <td><%= phone_line.number %></td>
+          <td><%= phone_line.SIM_key %></td>
+          <td><%= link_to 'Show', phone_line %></td>
+          <td><%= link_to 'Edit', edit_phone_line_path(phone_line) %></td>
+          <td><%= link_to 'Destroy', phone_line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Phone Line', new_phone_line_path %>
+  <br>
+
+</div>

@@ -1,5 +1,6 @@
 class PhoneDevicesController < ApplicationController
   before_action :set_phone_device, only: [:show, :edit, :update, :destroy]
+  before_action :get_available_phone_lines, only: [:new, :edit, :create]
 
   # GET /phone_devices
   # GET /phone_devices.json
@@ -62,6 +63,15 @@ class PhoneDevicesController < ApplicationController
   end
 
   private
+    # Get not assigned phone lines
+    def get_available_phone_lines
+      not_available_phone_lines_ids = PhoneDevice.where.not(phone_line_id: nil).map { |e| e.phone_line_id }
+      if @phone_device && @phone_device.phone_line.present?
+        include_id = not_available_phone_lines_ids.index @phone_device.phone_line_id
+        not_available_phone_lines_ids.delete_at include_id
+      end
+      @available_phone_lines = PhoneLine.where.not(id: not_available_phone_lines_ids)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_phone_device
       @phone_device = PhoneDevice.find(params[:id])

@@ -1,6 +1,11 @@
-<h1>Editing Phone Line</h1>
+<div class="container">
+  
+  <h1>Editando Linea Telefonica</h1>
+  <%= link_to 'Atrás', phone_lines_path %> |
+  <%= link_to 'Ver', @phone_line %>
+  <br>
+  <br>
+  <br>
+  <%= render 'form', phone_line: @phone_line %>
 
-<%= render 'form', phone_line: @phone_line %>
-
-<%= link_to 'Show', @phone_line %> |
-<%= link_to 'Back', phone_lines_path %>
+</div>

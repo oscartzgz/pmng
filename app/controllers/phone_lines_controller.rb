@@ -28,7 +28,7 @@ class PhoneLinesController < ApplicationController
 
     respond_to do |format|
       if @phone_line.save
-        format.html { redirect_to @phone_line, notice: 'Phone line was successfully created.' }
+        format.html { redirect_to phone_lines_url, notice: 'Phone line was successfully created.' }
         format.json { render :show, status: :created, location: @phone_line }
       else
         format.html { render :new }
