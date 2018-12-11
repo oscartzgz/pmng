@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  model: MyString
+  sku: MyString
+  value: 1.5
+  status: MyString
+  observations: MyString
+  assignment: MyString
+  quantity: MyString
+  IMEI: MyString
+  phone_line: one
+
+two:
+  brand: MyString
+  model: MyString
+  sku: MyString
+  value: 1.5
+  status: MyString
+  observations: MyString
+  assignment: MyString
+  quantity: MyString
+  IMEI: MyString
+  phone_line: two

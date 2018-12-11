@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @phone_device.brand %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @phone_device.model %>
+</p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @phone_device.sku %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @phone_device.value %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @phone_device.status %>
+</p>
+
+<p>
+  <strong>Observations:</strong>
+  <%= @phone_device.observations %>
+</p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @phone_device.assignment %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @phone_device.quantity %>
+</p>
+
+<p>
+  <strong>Imei:</strong>
+  <%= @phone_device.IMEI %>
+</p>
+
+<p>
+  <strong>Phone line:</strong>
+  <%= @phone_device.phone_line %>
+</p>
+
+<%= link_to 'Edit', edit_phone_device_path(@phone_device) %> |
+<%= link_to 'Back', phone_devices_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :phone_devices
   resources :phone_lines
   devise_for :users
   get 'home/index'
