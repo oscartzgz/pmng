@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  model: MyString
+  sku: MyString
+  value: 1.5
+  status: MyString
+  observations: MyString
+  assignment: MyString
+  category: MyString
+  quantity: 1
+
+two:
+  brand: MyString
+  model: MyString
+  sku: MyString
+  value: 1.5
+  status: MyString
+  observations: MyString
+  assignment: MyString
+  category: MyString
+  quantity: 1

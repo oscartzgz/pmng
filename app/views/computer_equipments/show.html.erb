@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @computer_equipment.brand %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @computer_equipment.model %>
+</p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @computer_equipment.sku %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @computer_equipment.value %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @computer_equipment.status %>
+</p>
+
+<p>
+  <strong>Observations:</strong>
+  <%= @computer_equipment.observations %>
+</p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @computer_equipment.assignment %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @computer_equipment.category %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @computer_equipment.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_computer_equipment_path(@computer_equipment) %> |
+<%= link_to 'Back', computer_equipments_path %>
