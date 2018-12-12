@@ -1,0 +1,42 @@
+<%= form_with(model: material, local: true) do |form| %>
+  <% if material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(material.errors.count, "error") %> prohibited this material from being saved:</h2>
+
+      <ul>
+      <% material.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :brand, 'Marca' %>
+    <%= form.text_field :brand, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model, 'Modelo' %>
+    <%= form.text_field :model, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value, 'Valor' %>
+    <%= form.text_field :value, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type, 'Tipo' %>
+    <%= form.text_field :type, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity, 'Cantidad' %>
+    <%= form.number_field :quantity, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

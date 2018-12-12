@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :materials
   resources :phone_devices
   resources :phone_lines
   devise_for :users

@@ -1,0 +1,42 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Materiales</h1>
+    </div>
+    <div class="col-lg-6 text-right">
+      <%= link_to '+ Nuevo Material', new_material_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Valor</th>
+        <th>Tipo</th>
+        <th>Cantidad</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @materials.each do |material| %>
+        <tr>
+          <td><%= material.brand %></td>
+          <td><%= material.model %></td>
+          <td><%= material.value %></td>
+          <td><%= material.type %></td>
+          <td><%= material.quantity %></td>
+          <td><%= link_to 'Show', material %></td>
+          <td><%= link_to 'Edit', edit_material_path(material) %></td>
+          <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>
