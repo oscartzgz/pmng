@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_13_051448) do
+ActiveRecord::Schema.define(version: 2018_12_13_052852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,7 +118,25 @@ ActiveRecord::Schema.define(version: 2018_12_13_051448) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "warehouses", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "accessory_id"
+    t.bigint "computer_equipment_id"
+    t.bigint "printer_id"
+    t.bigint "consumable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accessory_id"], name: "index_warehouses_on_accessory_id"
+    t.index ["computer_equipment_id"], name: "index_warehouses_on_computer_equipment_id"
+    t.index ["consumable_id"], name: "index_warehouses_on_consumable_id"
+    t.index ["printer_id"], name: "index_warehouses_on_printer_id"
+  end
+
   add_foreign_key "phone_devices", "phone_lines"
   add_foreign_key "printers", "consumables"
   add_foreign_key "users", "phone_devices"
+  add_foreign_key "warehouses", "accessories"
+  add_foreign_key "warehouses", "computer_equipments"
+  add_foreign_key "warehouses", "consumables"
+  add_foreign_key "warehouses", "printers"
 end

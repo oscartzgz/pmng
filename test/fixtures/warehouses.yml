@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  accessory: one
+  compute_equipement: one
+  printer: one
+  consumable: one
+
+two:
+  quantity: 1
+  accessory: two
+  compute_equipement: two
+  printer: two
+  consumable: two

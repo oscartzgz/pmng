@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @warehouse.quantity %>
+</p>
+
+<p>
+  <strong>Accessory:</strong>
+  <%= @warehouse.accessory %>
+</p>
+
+<p>
+  <strong>Compute equipement:</strong>
+  <%= @warehouse.compute_equipement %>
+</p>
+
+<p>
+  <strong>Printer:</strong>
+  <%= @warehouse.printer %>
+</p>
+
+<p>
+  <strong>Consumable:</strong>
+  <%= @warehouse.consumable %>
+</p>
+
+<%= link_to 'Edit', edit_warehouse_path(@warehouse) %> |
+<%= link_to 'Back', warehouses_path %>

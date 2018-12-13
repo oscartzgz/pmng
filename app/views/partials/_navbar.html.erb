@@ -7,7 +7,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item <%= 'active' if controller_name == ('home') %>">
-        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+        <%= link_to root_path, class: 'nav-link' do %>
+          Inicio <span class="sr-only">(current)</span>
+        <% end %>
       </li>
       <li class="nav-item <%= 'active' if controller_name == 'users' %>">
         <%= link_to 'Usuarios', users_path, class: 'nav-link' %>
@@ -18,32 +20,22 @@
       <li class="nav-item <%= 'active' if controller_name == 'materials' %>">
         <%= link_to 'Materiales', materials_path, class: 'nav-link' %>
       </li>
-      <li class="nav-item <%= 'active' if controller_name == 'computer_equipments' %>">
-        <%= link_to 'Equipos comp.', computer_equipments_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item <%= 'active' if controller_name == 'accessories' %>">
-        <%= link_to 'Accesorios', accessories_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item <%= 'active' if controller_name == 'consumables' %>">
-        <%= link_to 'Consumibles', consumables_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item <%= 'active' if controller_name == 'printers' %>">
-        <%= link_to 'Impresoras', printers_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown <%= 'active' if controller_name == 'warehouses' %>">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Almacen
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <%= link_to 'Alamacén', warehouses_path, class: 'dropdown-item' %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <%= link_to 'Impresoras', printers_path, class: 'dropdown-item' %>
+          <%= link_to 'Consumibles', consumables_path, class: 'dropdown-item' %>
+          <%= link_to 'Accesorios', accessories_path, class: 'dropdown-item' %>
+          <%= link_to 'E. Computo', computer_equipments_path, class: 'dropdown-item' %>
         </div>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+      </li> -->
     </ul>
     <%= current_user.email %> |
     <%= link_to 'Salir', destroy_user_session_path, method: :delete, class: 'btn btn-alert' %>

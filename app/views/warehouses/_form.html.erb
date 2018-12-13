@@ -1,0 +1,42 @@
+<%= form_with(model: warehouse, local: true) do |form| %>
+  <% if warehouse.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(warehouse.errors.count, "error") %> prohibited this warehouse from being saved:</h2>
+
+      <ul>
+      <% warehouse.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :quantity, 'Cantidad' %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accessory_id %>
+    <%= form.select :accessory_id, Accessory.all.map { |e| [e.brand, e.id] }, {include_blank: '--- Selecciona ---'}, class: '' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :computer_equipment_id %>
+    <%= form.select :compute_equipement_id, ComputerEquipment.all.map { |e| [e.brand, e.id] }, {include_blank: '--- Selecciona ---'}, class: '' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :printer_id %>
+    <%= form.select :printer_id, Printer.all.map { |e| [e.brand, e.id] }, {include_blank: '--- Selecciona ---'}, class: '' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :consumable_id %>
+    <%= form.select :consumable_id, Consumable.all.map { |e| [e.brand, e.id] }, {include_blank: '--- Selecciona ---'}, class: '' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Elementos de Almacén</h1>
+    </div>
+    <div class="col-lg-6 text-right">
+      <%= link_to '+ Nuevo elemento', new_warehouse_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Cantidad</th>
+        <th>Accesorio</th>
+        <th>Equipo Computo</th>
+        <th>Empresora</th>
+        <th>Consumible</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @warehouses.each do |warehouse| %>
+        <tr>
+          <td><%= warehouse.quantity %></td>
+          <td><%= warehouse.accessory %></td>
+          <td><%= warehouse.compute_equipement %></td>
+          <td><%= warehouse.printer %></td>
+          <td><%= warehouse.consumable %></td>
+          <td><%= link_to 'Show', warehouse %></td>
+          <td><%= link_to 'Edit', edit_warehouse_path(warehouse) %></td>
+          <td><%= link_to 'Destroy', warehouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>
