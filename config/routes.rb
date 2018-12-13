@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :accessories
   resources :computer_equipments
   resources :materials
   resources :phone_devices

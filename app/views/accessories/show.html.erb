@@ -1,0 +1,50 @@
+<div class="container">
+  
+  <p>
+    <strong>Name:</strong>
+    <%= @accessory.name %>
+  </p>
+
+  <p>
+    <strong>Brand:</strong>
+    <%= @accessory.brand %>
+  </p>
+
+  <p>
+    <strong>Model:</strong>
+    <%= @accessory.model %>
+  </p>
+
+  <p>
+    <strong>Sku:</strong>
+    <%= @accessory.sku %>
+  </p>
+
+  <p>
+    <strong>Value:</strong>
+    <%= @accessory.value %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= @accessory.status %>
+  </p>
+
+  <p>
+    <strong>Observations:</strong>
+    <%= @accessory.observations %>
+  </p>
+
+  <p>
+    <strong>Assignment:</strong>
+    <%= @accessory.assignment %>
+  </p>
+
+  <p>
+    <strong>Quantity:</strong>
+    <%= @accessory.quantity %>
+  </p>
+
+  <%= link_to 'Edit', edit_accessory_path(@accessory) %> |
+  <%= link_to 'Back', accessories_path %>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Accesorios</h1>
+    </div>
+    <div class="col-lg-6 text-right">
+      <%= link_to '+ Nuevo Accesorio', new_accessory_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <table>
+    <thead class="table">
+      <tr>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Sku</th>
+        <th>Valor</th>
+        <th>Estado</th>
+        <th>Observacones</th>
+        <th>Asignación</th>
+        <th>Cantidad</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @accessories.each do |accessory| %>
+        <tr>
+          <td><%= accessory.name %></td>
+          <td><%= accessory.brand %></td>
+          <td><%= accessory.model %></td>
+          <td><%= accessory.sku %></td>
+          <td><%= accessory.value %></td>
+          <td><%= accessory.status %></td>
+          <td><%= accessory.observations %></td>
+          <td><%= accessory.assignment %></td>
+          <td><%= accessory.quantity %></td>
+          <td><%= link_to 'Ver', accessory %></td>
+          <td><%= link_to 'Editar', edit_accessory_path(accessory) %></td>
+          <td><%= link_to 'Eliminar', accessory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>
