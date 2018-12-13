@@ -1,0 +1,42 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Consumibles</h1>
+    </div>
+    <div class="col-lg-6 text-right">
+      <%= link_to '+ Nuevo Consumible', new_consumable_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Value</th>
+        <th>Type</th>
+        <th>Quantity</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @consumables.each do |consumable| %>
+        <tr>
+          <td><%= consumable.brand %></td>
+          <td><%= consumable.model %></td>
+          <td><%= consumable.value %></td>
+          <td><%= consumable.type %></td>
+          <td><%= consumable.quantity %></td>
+          <td><%= link_to 'Show', consumable %></td>
+          <td><%= link_to 'Edit', edit_consumable_path(consumable) %></td>
+          <td><%= link_to 'Destroy', consumable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>

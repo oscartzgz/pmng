@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @consumable.brand %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @consumable.model %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @consumable.value %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @consumable.type %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @consumable.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_consumable_path(@consumable) %> |
+<%= link_to 'Back', consumables_path %>
