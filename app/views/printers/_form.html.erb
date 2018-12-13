@@ -1,0 +1,62 @@
+<%= form_with(model: printer, local: true) do |form| %>
+  <% if printer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(printer.errors.count, "error") %> prohibited this printer from being saved:</h2>
+
+      <ul>
+      <% printer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :brand, 'Marca' %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model, 'Modelo' %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sku %>
+    <%= form.text_field :sku %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value, 'Valor' %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status, 'Estado' %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :observations, 'Observaciones' %>
+    <%= form.text_field :observations %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assignment, 'Asignación' %>
+    <%= form.text_field :assignment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity, 'Cantidad' %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :consumable_id, 'Consumible' %>
+    <%= form.select :consumable_id, Consumable.all.map { |e| ["#{e.brand} - #{e.type}", e.id] }, {}, class: '' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

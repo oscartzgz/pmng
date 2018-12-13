@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_13_050108) do
+ActiveRecord::Schema.define(version: 2018_12_13_051448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,21 @@ ActiveRecord::Schema.define(version: 2018_12_13_050108) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "printers", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.string "sku"
+    t.float "value"
+    t.string "status"
+    t.string "observations"
+    t.string "assignment"
+    t.string "quantity"
+    t.bigint "consumable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["consumable_id"], name: "index_printers_on_consumable_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "job"
@@ -104,5 +119,6 @@ ActiveRecord::Schema.define(version: 2018_12_13_050108) do
   end
 
   add_foreign_key "phone_devices", "phone_lines"
+  add_foreign_key "printers", "consumables"
   add_foreign_key "users", "phone_devices"
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :printers
   resources :consumables
   resources :accessories
   resources :computer_equipments

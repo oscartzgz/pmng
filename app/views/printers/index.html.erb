@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Impresoras</h1>
+    </div>
+    <div class="col-lg-6 text-right">
+      <%= link_to '+ Nueva Impresora', new_printer_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Sku</th>
+        <th>Valor</th>
+        <th>Estado</th>
+        <th>Observaciones</th>
+        <th>Asignación</th>
+        <th>Cantidad</th>
+        <th>Consumible</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @printers.each do |printer| %>
+        <tr>
+          <td><%= printer.brand %></td>
+          <td><%= printer.model %></td>
+          <td><%= printer.sku %></td>
+          <td><%= printer.value %></td>
+          <td><%= printer.status %></td>
+          <td><%= printer.observations %></td>
+          <td><%= printer.assignment %></td>
+          <td><%= printer.quantity %></td>
+          <td><%= printer.consumable %></td>
+          <td><%= link_to 'Show', printer %></td>
+          <td><%= link_to 'Edit', edit_printer_path(printer) %></td>
+          <td><%= link_to 'Destroy', printer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>
