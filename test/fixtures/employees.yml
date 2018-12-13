@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  job: MyString
+  immediate_boss: MyString
+  phone_device: one
+  computer_equipment: one
+  accessory: one
+  printer: one
+
+two:
+  name: MyString
+  job: MyString
+  immediate_boss: MyString
+  phone_device: two
+  computer_equipment: two
+  accessory: two
+  printer: two

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @employee.job %>
+</p>
+
+<p>
+  <strong>Immediate boss:</strong>
+  <%= @employee.immediate_boss %>
+</p>
+
+<p>
+  <strong>Phone device:</strong>
+  <%= @employee.phone_device %>
+</p>
+
+<p>
+  <strong>Computer equipment:</strong>
+  <%= @employee.computer_equipment %>
+</p>
+
+<p>
+  <strong>Accessory:</strong>
+  <%= @employee.accessory %>
+</p>
+
+<p>
+  <strong>Printer:</strong>
+  <%= @employee.printer %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

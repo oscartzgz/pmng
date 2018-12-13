@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_13_052852) do
+ActiveRecord::Schema.define(version: 2018_12_13_055922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,22 @@ ActiveRecord::Schema.define(version: 2018_12_13_052852) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.string "job"
+    t.string "immediate_boss"
+    t.bigint "phone_device_id"
+    t.bigint "computer_equipment_id"
+    t.bigint "accessory_id"
+    t.bigint "printer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accessory_id"], name: "index_employees_on_accessory_id"
+    t.index ["computer_equipment_id"], name: "index_employees_on_computer_equipment_id"
+    t.index ["phone_device_id"], name: "index_employees_on_phone_device_id"
+    t.index ["printer_id"], name: "index_employees_on_printer_id"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -132,6 +148,10 @@ ActiveRecord::Schema.define(version: 2018_12_13_052852) do
     t.index ["printer_id"], name: "index_warehouses_on_printer_id"
   end
 
+  add_foreign_key "employees", "accessories"
+  add_foreign_key "employees", "computer_equipments"
+  add_foreign_key "employees", "phone_devices"
+  add_foreign_key "employees", "printers"
   add_foreign_key "phone_devices", "phone_lines"
   add_foreign_key "printers", "consumables"
   add_foreign_key "users", "phone_devices"

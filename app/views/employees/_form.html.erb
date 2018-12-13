@@ -1,0 +1,52 @@
+<%= form_with(model: employee, local: true) do |form| %>
+  <% if employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, 'Nombre' %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :job, 'Puesto' %>
+    <%= form.text_field :job, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :immediate_boss, 'Jefe inmediato' %>
+    <%= form.text_field :immediate_boss, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :phone_device_id, 'Telefono asignado' %>
+    <%= form.select :phone_device_id, PhoneDevice.all.map { |e| [e.brand, e.id] }, { include_blank: '--- Selecciona ---'}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :computer_equipment_id, 'Computadora asignada' %>
+    <%= form.select :computer_equipment_id, ComputerEquipment.all.map { |e| [e.brand, e.id] }, { include_blank: '--- Selecciona ---'}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :accessory_id, 'Accesorio asignado' %>
+    <%= form.select :accessory_id, Accessory.all.map { |e| [e.brand, e.id] }, { include_blank: '--- Selecciona ---'}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :printer_id, 'Impresora asignada' %>
+    <%= form.select :printer_id, Printer.all.map { |e| [e.brand, e.id] }, { include_blank: '--- Selecciona ---'}, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

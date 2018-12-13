@@ -1,0 +1,46 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Empleados</h1>
+    </div>
+    <div class="col-lg-6 text-right">
+      <%= link_to '+ Nuevo Empleado', new_employee_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Puesto</th>
+        <th>Jefe inmediato</th>
+        <th>Telefono asignado</th>
+        <th>Computadora asignada</th>
+        <th>Accesorio asignado</th>
+        <th>Impresora asignada</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr>
+          <td><%= employee.name %></td>
+          <td><%= employee.job %></td>
+          <td><%= employee.immediate_boss %></td>
+          <td><%= employee.phone_device %></td>
+          <td><%= employee.computer_equipment %></td>
+          <td><%= employee.accessory %></td>
+          <td><%= employee.printer %></td>
+          <td><%= link_to 'Show', employee %></td>
+          <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+          <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>
