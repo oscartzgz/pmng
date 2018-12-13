@@ -21,6 +21,9 @@
       <li class="nav-item <%= 'active' if controller_name == 'computer_equipments' %>">
         <%= link_to 'Equipos comp.', computer_equipments_path, class: 'nav-link' %>
       </li>
+      <li class="nav-item <%= 'active' if controller_name == 'accessories' %>">
+        <%= link_to 'Accesorios', accessories_path, class: 'nav-link' %>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
@@ -37,6 +40,6 @@
       </li>
     </ul>
     <%= current_user.email %> |
-    <%= link_to 'Salir', users_path, method: :delete, class: 'btn btn-alert' %>
+    <%= link_to 'Salir', destroy_user_session_path, method: :delete, class: 'btn btn-alert' %>
   </div>
 </nav>
