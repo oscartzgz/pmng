@@ -28,7 +28,7 @@
 
   <div class="form-group">
     <%= form.label :phone_device_id, 'Telefono asignado' %>
-    <%= form.select :phone_device_id, PhoneDevice.all.map { |e| [e.brand, e.id] }, { include_blank: '--- Selecciona ---'}, class: 'form-control' %>
+    <%= form.select :phone_device_id, PhoneDevice.all.map { |e| ["#{e.brand} - #{e.IMEI}", e.id] }, { include_blank: '--- Selecciona ---'}, class: 'form-control' %>
   </div>
 
   <div class="form-group">

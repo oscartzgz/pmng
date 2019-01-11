@@ -21,7 +21,7 @@
         <th>Assignment</th>
         <th>Quantity</th>
         <th>Imei</th>
-        <th>Phone line</th>
+        <th>Linea Asig.</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -38,10 +38,10 @@
           <td><%= phone_device.assignment %></td>
           <td><%= phone_device.quantity %></td>
           <td><%= phone_device.IMEI %></td>
-          <td><%= phone_device.phone_line %></td>
-          <td><%= link_to 'Show', phone_device %></td>
-          <td><%= link_to 'Edit', edit_phone_device_path(phone_device) %></td>
-          <td><%= link_to 'Destroy', phone_device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= phone_device.phone_line.number %></td>
+          <td><%= link_to 'Ver', phone_device %></td>
+          <td><%= link_to 'Editar', edit_phone_device_path(phone_device) %></td>
+          <td><%= link_to 'X', phone_device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

@@ -29,8 +29,11 @@
           <td><%= employee.name %></td>
           <td><%= employee.job %></td>
           <td><%= employee.immediate_boss %></td>
-          <td><%= employee.phone_device %></td>
-          <td><%= employee.computer_equipment %></td>
+          <td><%= "#{employee.phone_device.brand} - #{employee.phone_device.IMEI}" if employee.phone_device %>
+            <br>
+            <%= "Linea: #{ employee.phone_device.phone_line.present? ? employee.phone_device.phone_line.number : 'Sin linea' }" %>
+          </td>
+          <td><%= employee.computer_equipment.brand %></td>
           <td><%= employee.accessory %></td>
           <td><%= employee.printer %></td>
           <td><%= link_to 'Show', employee %></td>
